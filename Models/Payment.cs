@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Hotel_Management_System.Models;
-internal class Payment
+public class Payment
 {
     public int Id { get; set; }
     public int ReservationId { get; set; }

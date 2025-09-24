@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Hotel_Management_System.Data.Configuration;
-internal class GuestConfiguration : IEntityTypeConfiguration<Guest>
+public class GuestConfiguration : IEntityTypeConfiguration<Guest>
 {
     public void Configure(EntityTypeBuilder<Guest> builder)
     {
@@ -24,15 +24,16 @@ internal class GuestConfiguration : IEntityTypeConfiguration<Guest>
 
         builder.Property(p => p.Phone)
             .IsRequired()
-            .HasColumnType("varChar(20)")
+            .HasColumnType("varchar(20)")
             .HasMaxLength(20);
 
         builder.Property(p => p.Email)
+            .HasColumnType("varchar(20)")
             .HasMaxLength(40);
 
         builder.HasMany(p => p.Reservations)
                .WithOne(reservation => reservation.Guest)
-               .HasForeignKey(reservation => reservation.Guestid);
+               .HasForeignKey(reservation => reservation.GuestId);
             
     }
 }

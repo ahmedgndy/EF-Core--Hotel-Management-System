@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Hotel_Management_System.Data.Configuration;
-internal class ReservationConfiguration : IEntityTypeConfiguration<Reservation>
+public class ReservationConfiguration : IEntityTypeConfiguration<Reservation>
 {
     public void Configure(EntityTypeBuilder<Reservation> builder)
     {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Hotel_Management_System.Data.Configuration;
 
-internal class PaymentConfiguration : IEntityTypeConfiguration<Payment>
+public class PaymentConfiguration : IEntityTypeConfiguration<Payment>
 {
     public void Configure(EntityTypeBuilder<Payment> builder)
     {

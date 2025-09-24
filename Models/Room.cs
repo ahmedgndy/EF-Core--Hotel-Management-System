@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hotel_Management_System.Models;
 
-internal class Room
+public class Room
 {
     public int RoomId { get; set; }
     public int RoomNumber { get; set; }

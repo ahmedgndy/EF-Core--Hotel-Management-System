@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Hotel_Management_System.Models;
-internal class Guest
+public class Guest
 {
     public int GuestId { get; set; }
     public string FullName { get; set; }
 
-    public string Phone;
+    public string Phone { get; set; }
 
-    public string? Email;
+    public string? Email { get; set; }
 
     //list of reservitions
     public List<Reservation>? Reservations { get; set; }
