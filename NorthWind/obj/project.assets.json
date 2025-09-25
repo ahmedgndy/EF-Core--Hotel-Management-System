@@ -4848,9 +4848,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\NorthWind\\NorthWind.csproj",
-      "projectName": "NorthWind",
-      "projectPath": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\NorthWind\\NorthWind.csproj",
+      "projectUniqueName": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\NorthWind\\3-NorthWind.csproj",
+      "projectName": "3-NorthWind",
+      "projectPath": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\NorthWind\\3-NorthWind.csproj",
       "packagesPath": "C:\\Users\\El-Wattaneya\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\NorthWind\\obj\\",
       "projectStyle": "PackageReference",

@@ -4716,9 +4716,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\Hotel Management System\\Hotel Management System.csproj",
-      "projectName": "Hotel Management System",
-      "projectPath": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\Hotel Management System\\Hotel Management System.csproj",
+      "projectUniqueName": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\Hotel Management System\\1-Hotel Management System.csproj",
+      "projectName": "1-Hotel Management System",
+      "projectPath": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\Hotel Management System\\1-Hotel Management System.csproj",
       "packagesPath": "C:\\Users\\El-Wattaneya\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\Hotel Management System\\obj\\",
       "projectStyle": "PackageReference",
