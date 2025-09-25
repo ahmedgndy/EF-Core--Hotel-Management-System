@@ -4716,9 +4716,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\Inheritance Mapping\\4-Inheritance Mapping  (TPH).csproj",
-      "projectName": "4-Inheritance Mapping  (TPH)",
-      "projectPath": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\Inheritance Mapping\\4-Inheritance Mapping  (TPH).csproj",
+      "projectUniqueName": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\Inheritance Mapping\\TPh.csproj",
+      "projectName": "TPh",
+      "projectPath": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\Inheritance Mapping\\TPh.csproj",
       "packagesPath": "C:\\Users\\El-Wattaneya\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\Inheritance Mapping\\obj\\",
       "projectStyle": "PackageReference",

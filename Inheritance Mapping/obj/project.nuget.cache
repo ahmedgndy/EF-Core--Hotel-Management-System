@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xRywdi4Rx9g=",
+  "dgSpecHash": "XQLNIhGMMJQ=",
   "success": true,
-  "projectFilePath": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\Inheritance Mapping\\4-Inheritance Mapping  (TPH).csproj",
+  "projectFilePath": "C:\\Users\\El-Wattaneya\\Desktop\\EFCore\\Inheritance Mapping\\TPH.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\El-Wattaneya\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\El-Wattaneya\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
