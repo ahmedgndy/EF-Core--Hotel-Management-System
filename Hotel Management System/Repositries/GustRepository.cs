@@ -22,7 +22,7 @@ public class GustRepository(AppDbContext context) : IGustRepository
 
     public  List<Guest> GetAllGuestsWithReservations()
     {
-        var guests =  context.Guests.ToList();
+        var guests =  context.Guests.Include(g => g.Reservations).ToList();
         Console.WriteLine($"Found {guests.Count} guests");
 
         return guests;

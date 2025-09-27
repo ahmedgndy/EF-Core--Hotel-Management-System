@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inheritance_Mapping.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,9 +15,6 @@ namespace Inheritance_Mapping.Models
 
         public DateTime LastStayDate { get; set; }
     }
-    public enum MembershipLevel
-    {
-        Silver, Gold, Platinum
-    }
+ 
 }
 

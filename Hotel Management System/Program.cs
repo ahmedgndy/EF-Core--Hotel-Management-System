@@ -8,19 +8,22 @@ namespace Hotel_Management_System
         static void Main(string[] args)
         {
             //get all gests
+            
             using (var context = new AppDbContext())
             {
                 var Gustsrepo = new GustRepository(context);
-                var gusts = Gustsrepo.GetAllGuestsWithReservations();
-                foreach (var gust in gusts)
+                var guests = Gustsrepo.GetAllGuestsWithReservations();
+                foreach (var guest in guests)
                 {
-                    Console.WriteLine(gust.FullName);
-                    Console.WriteLine(gust.Reservations);
+                    Console.WriteLine(guest.FullName);
+                    if (guest.Reservations.Count() !=0)
+                        Console.WriteLine(guest.Reservations[0].Room);
                 }
 
             }
 
             //get all guest by  id 
+     
             using (var context = new AppDbContext())
             {
                 var Gustsrepo = new GustRepository(context);
@@ -29,6 +32,7 @@ namespace Hotel_Management_System
                 Console.WriteLine(gust.FullName);
 
             }
+            
             //3.Show available rooms
             using (var context = new AppDbContext())
             {

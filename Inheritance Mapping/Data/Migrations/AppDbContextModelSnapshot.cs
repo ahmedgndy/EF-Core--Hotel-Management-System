@@ -22,37 +22,36 @@ namespace Inheritance_Mapping.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.HasSequence("GuestSequence");
+
             modelBuilder.Entity("Inheritance_Mapping.Models.Guest", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasDefaultValueSql("NEXT VALUE FOR [GuestSequence]");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(13)
-                        .HasColumnType("nvarchar(13)");
+                    SqlServerPropertyBuilderExtensions.UseSequence(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
                     b.Property<string>("FullName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
 
                     b.Property<string>("Phone")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Guests");
+                    b.ToTable((string)null);
 
-                    b.HasDiscriminator().HasValue("Guest");
-
-                    b.UseTphMappingStrategy();
+                    b.UseTpcMappingStrategy();
                 });
 
             modelBuilder.Entity("Inheritance_Mapping.Models.Reservation", b =>
@@ -63,14 +62,14 @@ namespace Inheritance_Mapping.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int?>("GuestId")
+                    b.Property<int>("GuestId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("GuestId");
 
-                    b.ToTable("Reservation");
+                    b.ToTable("Reservations");
                 });
 
             modelBuilder.Entity("Inheritance_Mapping.Models.FrequentGuest", b =>
@@ -86,7 +85,7 @@ namespace Inheritance_Mapping.Data.Migrations
                     b.Property<int>("MembershipLevel")
                         .HasColumnType("int");
 
-                    b.HasDiscriminator().HasValue("FrequentGuest");
+                    b.ToTable("FrequentGuests", (string)null);
                 });
 
             modelBuilder.Entity("Inheritance_Mapping.Models.VIPGuest", b =>
@@ -95,21 +94,29 @@ namespace Inheritance_Mapping.Data.Migrations
 
                     b.Property<string>("VipCardNumber")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(50)");
 
-                    b.HasDiscriminator().HasValue("VIPGuest");
+                    b.HasIndex("VipCardNumber")
+                        .IsUnique()
+                        .HasFilter("[VipCardNumber] IS NOT NULL");
+
+                    b.ToTable("VIPGuests", (string)null);
                 });
 
             modelBuilder.Entity("Inheritance_Mapping.Models.Reservation", b =>
                 {
-                    b.HasOne("Inheritance_Mapping.Models.Guest", null)
-                        .WithMany("reservations")
-                        .HasForeignKey("GuestId");
+                    b.HasOne("Inheritance_Mapping.Models.Guest", "Guest")
+                        .WithMany("Reservations")
+                        .HasForeignKey("GuestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Guest");
                 });
 
             modelBuilder.Entity("Inheritance_Mapping.Models.Guest", b =>
                 {
-                    b.Navigation("reservations");
+                    b.Navigation("Reservations");
                 });
 #pragma warning restore 612, 618
         }

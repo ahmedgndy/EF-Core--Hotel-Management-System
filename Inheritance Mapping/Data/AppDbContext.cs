@@ -14,15 +14,25 @@ namespace Inheritance_Mapping.Data
         public DbSet<VIPGuest> VIPGuests { get; set; }
 
         public DbSet<FrequentGuest> FrequentGuests { get; set;  }
+
+        public DbSet<Reservation> Reservations { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString: "Server=(localdb)\\MSSQLLocalDB;Database=TPHDatabase;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer(connectionString: "Server=(localdb)\\MSSQLLocalDB;Database=TPCDatabase;Trusted_Connection=True;TrustServerCertificate=True;");
 
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppContext).Assembly);
+
+            modelBuilder.Entity<Guest>().UseTpcMappingStrategy();
+
+            //apply Table Per Concerte Type 
+            modelBuilder.Entity<VIPGuest>().ToTable(name: "VIPGuests");
+            modelBuilder.Entity<FrequentGuest>().ToTable(name: "FrequentGuests");
+
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+
         }
     }
 }

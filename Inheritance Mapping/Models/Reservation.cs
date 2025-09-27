@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Inheritance_Mapping.Models
+namespace Inheritance_Mapping.Models;
+
+public class Reservation
 {
-    public class Reservation
-    {
-        public int Id { get; set; }
-    }
+    public int Id { get; set; }
+    public Guest Guest { get; set; }
+    public int GuestId { get; set; }
 }
